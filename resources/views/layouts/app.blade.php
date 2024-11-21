@@ -49,8 +49,10 @@
                         </a>
                         @endif
                         @else
-                        <a href="{{ route('login') }}" class="block mt-2 lg:inline-block lg:mt-0 text-santa-white hover:text-santa-gold mr-4">{{ __('Login') }}</a>
-                        <a href="{{ route('register') }}" class="block mt-2 lg:inline-block lg:mt-0 text-santa-white hover:text-santa-gold">{{ __('Register') }}</a>
+                        <a href="{{ url('/') }}" class="block mt-2 lg:inline-block lg:mt-0 text-santa-white hover:text-santa-gold  border-r border-santa-white px-2">{{ __('Home') }}</a>
+                        <a href="{{ route('login') }}" class="block mt-2 lg:inline-block lg:mt-0 text-santa-white hover:text-santa-gold  border-r border-santa-white px-2">{{ __('Participant Login') }}</a>
+                        <a href="{{ route('register') }}" class="block mt-2 lg:inline-block lg:mt-0 text-santa-white hover:text-santa-gold border-r text-center border-santa-white px-2">{{ __('Organize an Exchange') }}</a>
+                        <a href="{{ route('register') }}" class="block mt-2 lg:inline-block lg:mt-0 text-santa-white hover:text-santa-gold">{{ __('Organizer Login') }}</a>
                         @endguest
                     </div>
                 </div>

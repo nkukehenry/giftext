@@ -15,10 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/participant', [ParticipantController::class, 'index'])->middleware('auth:participant');
 
 Auth::routes();
+
+Route::get('/signup', [AdminAuthController::class, 'showRegisterForm'])->name('signup');
+Route::get('/register', [AdminAuthController::class, 'showRegisterForm'])->name('register');
+Route::post('register', [AdminAuthController::class, 'register'])->name('organizer.register');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/participant', [ParticipantController::class, 'index'])->middleware('auth:participant');
 
 Route::get('/email/verify', [EmailVerificationController::class, 'index'])->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->name('verification.verify');
@@ -49,8 +53,4 @@ Route::prefix('admin')->middleware(['auth', 'web','admin'])->group(function () {
     Route::delete('/groups/{id}', [AdminController::class, 'destroyGroup'])->name('admin.groups.destroy');
 });
 
-Route::prefix('admin')->group(function () {
-    Route::get('register', [AdminAuthController::class, 'showRegisterForm'])->name('admin.register');
-    Route::post('register', [AdminAuthController::class, 'register']);
-});
 
