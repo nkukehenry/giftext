@@ -5,7 +5,8 @@
     <div class="grid gap-6 lg:grid-cols-1 mt-3">
         
         <!-- Sign Up and Login Buttons -->
-        <div class="flex justify-center mt-4 bg-santa-white">
+         <h2 class="text-center mt-2 text-xl font-semibold text-santa-green">Social Gift Exchange Made Easy</h2>
+        <div class="flex justify-center mt-2 bg-santa-white">
             <a href="{{ url('/signup') }}" class="bg-santa-green text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-santa-gold transition duration-300 mr-4">
                Organizer Sign Up
             </a>

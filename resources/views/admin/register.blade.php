@@ -39,8 +39,9 @@
 
                         <div class="mb-4">
                             <label for="group_type" class="block text-santa-green text-sm font-bold mb-2">{{ __('Group Type') }}</label>
-                            <select id="group_type" name="group_type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onchange="updateInstitutionLabel()">
-                                <option value="family">Family</option>
+                            <select id="group_type" name="group_type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onchange="updateInstitutionLabel()" required>
+                            <option value="" selected disabled>Choose</option>    
+                            <option value="family">Family</option>
                                 <option value="organization">Organization</option>
                                 <option value="friends">Friends</option>
                                 <option value="event">Event</option>
@@ -91,16 +92,16 @@
                     institutionInput.placeholder = 'Enter your organization name';
                     break;
                 case 'friends':
-                    institutionLabel.innerText = 'Friends Group Name';
-                    institutionInput.placeholder = 'Enter your friends group name';
+                    institutionLabel.innerText = 'Give Your Friends Group Name';
+                    institutionInput.placeholder = 'Enter Group Name';
                     break;
                 case 'event':
                     institutionLabel.innerText = 'Event Name';
                     institutionInput.placeholder = 'Enter your event name';
                     break;
                 case 'other':
-                    institutionLabel.innerText = 'What is your cause/purpose?';
-                    institutionInput.placeholder = 'Enter your cause/purpose';
+                    institutionLabel.innerText = 'What is your cause/purpose/group name?';
+                    institutionInput.placeholder = 'Enter your cause/purpose/group name';
                     break;
                 default:
                     institutionLabel.innerText = 'Institution/Organization Name';
